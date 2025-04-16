@@ -1,0 +1,916 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AOD SHOP</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>
+ 
+    <style type="text/css">
+        body{
+            
+            background:#F4EFEF;
+            margin: auto;
+        }
+    
+        .tieude{
+            
+        }
+        .tieude ul{
+            
+        }
+        .tieude ul li{
+            list-style-type: none;
+  display: inline;
+  margin-left: 50px;
+          
+            margin-left: 15%;
+          
+            color: #000000;
+        
+        }
+        .col-12 h6{
+           border: 1px solid #F95C5E;
+            border-radius: 5px;
+            width: 170px;
+           
+        }
+        
+        .category-icon{
+            width: 100px;
+            height: 100px;
+        }
+        .category-icon img{
+          vertical-align:sub;
+            
+        }
+        .footterconten{
+            vertical-align: inherit;
+        }
+        .pagination{
+           vertical-align: inherit;
+            margin-left: 35%;
+            margin-right: 40%
+        }
+        .pagination ul{
+            color: #000000;
+        }
+          .pagination li{
+            color: #000000;
+        }
+        .page-link{
+            color: #000000;
+        }
+
+
+        .body {
+            font-family: 'open sans';
+            overflow-x: hidden;
+        }
+
+     .img {
+            max-width: 100%;
+        }
+
+        .preview {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 996px) {
+            .preview {
+                margin-bottom: 20px;
+            }
+        }
+
+        .preview-pic {
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-height: 300px;
+        }
+
+        .preview-thumbnail.nav-tabs {
+            border: none;
+            margin-top: 15px;
+        }
+
+        .preview-thumbnail.nav-tabs li {
+            width: 18%;
+            margin-right: 2.5%;
+        }
+
+        .preview-thumbnail.nav-tabs li img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .preview-thumbnail.nav-tabs li a {
+            padding: 0;
+            margin: 0;
+        }
+
+        .preview-thumbnail.nav-tabs li:last-of-type {
+            margin-right: 0;
+        }
+
+        .tab-content {
+            overflow: hidden;
+        }
+
+        .tab-content img {
+            width: 100%;
+            -webkit-animation-name: opacity;
+            animation-name: opacity;
+            -webkit-animation-duration: .3s;
+            animation-duration: .3s;
+        }
+
+        .card {
+            margin-top: 50px;
+            background: #eee;
+            padding: 3em;
+            line-height: 1.5em;
+        }
+
+        @media screen and (min-width: 997px) {
+            .wrapper {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+            }
+        }
+
+        .details {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .colors {
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+
+        .product-title,
+        .price,
+        .sizes,
+        .colors {
+            text-transform: UPPERCASE;
+            font-weight: bold;
+        }
+details summary::marker {
+  content: '│'; /* Thay thế tam giác bằng kẻ dọc */
+  text-align: center; /* Canh giữa kẻ dọc */
+}
+        .checked,
+        .price span {
+            color: #ff9f1a;
+        }
+
+        .product-title,
+        .rating,
+        .product-description,
+        .price,
+        .vote,
+        .sizes {
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            margin-top: 0;
+        }
+
+        .size {
+            margin-right: 10px;
+        }
+
+        .size:first-of-type {
+            margin-left: 40px;
+        }
+
+        .color {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            height: 2em;
+            width: 2em;
+            border-radius: 2px;
+        }
+
+        .color:first-of-type {
+            margin-left: 20px;
+        }
+
+        .add-to-cart,
+        .like {
+            background: #ff9f1a;
+            padding: 1.2em 1.5em;
+            border: none;
+            text-transform: UPPERCASE;
+            font-weight: bold;
+            color: #fff;
+            -webkit-transition: background .3s ease;
+            transition: background .3s ease;
+        }
+
+        .add-to-cart:hover,
+        .like:hover {
+            background: #b36800;
+            color: #fff;
+        }
+
+        .not-available {
+            text-align: center;
+            line-height: 2em;
+        }
+
+        .not-available:before {
+            font-family: fontawesome;
+            content: "\f00d";
+            color: #fff;
+        }
+
+        .orange {
+            background: #ff9f1a;
+        }
+
+        .green {
+            background: #85ad00;
+        }
+
+        .blue {
+            background: #0076ad;
+        }
+
+        .tooltip-inner {
+            padding: 1.3em;
+        }
+
+        @-webkit-keyframes opacity {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(3);
+                transform: scale(3);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(3);
+                transform: scale(3);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+
+
+ 
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+       h1 {
+            margin: 0;
+        }
+        .contact-info {
+            background: #e2e2e2;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+      
+        .heard div img{
+            width: 45%;
+            height: 15%;
+        }
+        .tab-content {
+            background: #FCFCFC;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            
+        }
+        .tab-content a {
+            color: #000000; 
+        }
+        .tab-content li {
+            color: #000000; 
+        }
+        .p-3{
+            width : 370px;
+            height: 500px;
+            border-radius: 10px;
+            overflow-y: scroll;
+        }
+        .col-md-3{
+     
+        }
+
+        }
+        .fs-6{
+            margin-top: 2px;
+            margin-bottom:  1px;
+            vertical-align: inherit;
+        }
+        .dropdown-menu{
+          width: 20px;
+            height: 30px;
+            margin-top: 5px;
+        }
+        .p-4{
+            width: 1100px;
+            height: 500px;
+            overflow-y: scroll;
+        }
+        .select{
+            width: 200px;
+        }
+        .mota{
+        width: 500px;
+            height: 100px
+                
+        }
+        .reset{
+            width: 90px;
+            background: #FFFAFA;
+            box-shadow:0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+            border:  1px solid #CAC5C6;
+            
+        }
+        .update{
+           width: 180px;
+            
+            background:#FC7274 ;
+            box-shadow:0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+            border:  1px solid #CAC5C6;
+              
+        }
+    </style>
+</head>
+   
+
+
+
+<body class="d-flex flex-column h-100">
+   
+    <section class="myheader">
+    <div class="container py-3">
+        <div class="row">
+        <div class="col-md-3">
+            <img src="logo-files/logo.png" width="70%" class="img-fluid">
+            </div>
+            <div class="col-md-4 ">
+                 <form action="timkiem.php" method="POST">
+             <div class="input-group mb-1">
+                
+  <input type="text" class="form-control" placeholder="Nhập sản phẩm cần tìm" aria-label="Nhap san pham can tim" aria-describedby="basic-addon2" name="tukhoa">
+  <span class="input-group-text" id="basic-addon2" ><input type="submit" value="Tìm kiếm" name="timkiem"></i>
+</span>
+           
+</div>
+                      </form>
+            </div>
+            <div class="col-md-3 ">
+            <div class="row">
+                <div class="col">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="fs-3 text-danger">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+</div>
+                    <div class="col-9">
+                        Tư vấn hỗ trợ<br>
+                        <strong class="fs-6 text-danger ">0823458246</strong>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="fs-3 text-danger">
+                      <i class="fa-regular fa-circle-user"></i>
+                        </div>
+                        </form>
+                    </div>      
+                    <div class="col-9">
+                        Xin chào!!!<br>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+            <div class="row">
+                <div class="col-4">
+                <a href="#" class="position-relative">
+  <span class="fs-4"><i class="fa-regular fa-heart"></i></span>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    0
+    
+  </span>
+</a>
+                </div>
+                <div class="col-4">
+                             <a href="tranggiohang.php" class="position-relative">
+  <span class="fs-4"><i class="fa-brands fa-shopify"></i></span>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    0
+    
+  </span>
+</a>
+                </div>
+                <div class="col-4">
+                             <a href="#" class="position-relative">
+  <span class="fs-4"><i class="fa-solid fa-share-nodes"></i></span>
+ 
+   
+ 
+</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--myheard-->
+    </section>
+    <section class="mymenu bg-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-10">
+      <nav class="nnavbar navbar-expand-lg navbar-light bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand d-none" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="home.php">Trang chủ</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true"  aria-expanded="true">
+          Sản Phẩm
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li><hr class="dropdown-divider"><b>Thời trang</b></li>
+           
+            <li><a class="dropdown-item" href="quan.php">Quần</a></li>
+            <li><a class="dropdown-item" href="ao.php">Áo</a></li>
+                          <li><a class="dropdown-item" href="#">Mũ</a></li>
+                          <li><a class="dropdown-item" href="#">Váy</a></li>
+            <li><hr class="dropdown-divider"><b>Trang sức</b></li>
+              
+                          <li><a class="dropdown-item" href="#">Nhẫn</a></li>
+                          <li><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                          <li><a class="dropdown-item" href="#">Vòng tay</a></li>
+                          <li><a class="dropdown-item" href="#">Khuyên tai</a></li>
+              <li><hr class="dropdown-divider"><b>Nước giặt</b></li>
+               
+                <li><a class="dropdown-item" href="nuocxavai.php">Nước giặt Hygiene</a></li>
+                <li><a class="dropdown-item" href="#">Nước xả vải D-nee</a></li>
+              <li><hr class="dropdown-divider"><b>Đồ điện tử</b></li>
+              
+            <li><a class="dropdown-item" href="dienthoai.html">Điện thoại</a></li>
+              <li><a class="dropdown-item" href="#">Laptop</a></li>
+              <li><a class="dropdown-item" href="#">Ipad</a></li>
+              <li><a class="dropdown-item" href="#">Airdrop</a></li>
+              <li><hr class="dropdown-divider"><b>Đồ chơi trẻ em</b></li>
+              
+              <li><a class="dropdown-item" href="#">Ô tô điều khiển từ xa</a></li>
+              <li><a class="dropdown-item" href="#">Lego</a></li>
+              <li><a class="dropdown-item" href="#">Súng nước </a></li>
+              <li><a class="dropdown-item" href="#">Con quay</a></li>
+          </ul>
+        </li>
+             <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bài Viết</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Xu hướng </a></li>
+                  <li><a class="dropdown-item" href="#">Ưu đãi cuối tháng</a></li>
+                  <li><a class="dropdown-item" href="#">Hàng mới được nhập về</a></li>
+              
+              </ul>
+          </li>
+             <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Chăm Sóc Khách Hàng!!!</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" type="disc">
+                  <li><a class="dropdown-item" href="chamsockh.php">Phản hồi của người dùng</a></li>
+                   <li><a class="dropdown-item" href="#">Tích thưởng như thế nào?</a></li>
+                   <li><a class="dropdown-item" href="#">Chương trình ưu đãi sinh nhật khách hàng</a></li>
+                   <li><a class="dropdown-item" href="#">Chính sách thành viên</a></li>
+                   <li><a class="dropdown-item" href="#">Chính sách bảo hành</a></li>
+                   <li><a class="dropdown-item" href="#">Hướng dẫn mua trả góp tại AOD</a></li> 
+                   <li><a class="dropdown-item" href="#">Hướng dẫn quay video đóng/mở gói hàng</a></li>
+    
+              </ul>
+          </li> 
+        <li class="nav-item">
+          <a class="nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Tuyển dụng</a>
+        </li>
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Liên Hệ</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="chamsockh.php">Hỏi&amp;đáp</a></li>
+              
+              </ul>
+          </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+          </div>
+            </div>
+        </div>
+    </section>
+       
+</section> 
+<section class="mycontent">
+          
+    <div class="container">
+ <div class="row py-3">
+  <div class="slider">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+
+</div>
+<div class="carousel-item">
+<img src="do-tien-ich-gia-dung-99k-hang-nhat.jpg" class="d-block w-100" alt="99k">
+</div>
+<div class="carousel-item">
+<img src="flash-deal-dinh-cuoi-nam-2019-tai-sanhangre.jpg" class="d-block w-100" alt="...">
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+</div>
+     </div>
+      
+  <!---------------------------------------------slider-------------------------------------------->
+      
+    
+         <!---------------------------------------------cate-list---------------------------->
+         <div class="tieude">
+      <ul class="hm-tabs__list">
+          <li class="hm-tabs__item">
+              <a href="javascript:void(0)" data-tab="home-col__tab1" class="active" data-reg="true" data-handle="hot-products">Sản Phẩm Nổi Bật</a>
+          </li>
+          
+          <li class="hm-tabs__item">
+              <a href="javascript:void(0)" data-tab="home-col__tab2" data-reg="true" data-handle="san-pham-39k" class="">Sản Phẩm Bán Chạy</a>
+          </li>
+          
+          
+          <li class="hm-tabs__item">
+              <a href="javascript:void(0)" data-tab="home-col__tab3" data-reg="true" data-handle="ao" class="">Gợi ý cho bạn</a>
+          </li>
+          
+      </ul>
+  </div>
+             
+       
+         <!---------------------------------------contect------------------------------------>
+          <div class="contenheard">
+         <div class="row">
+             <div class="col-12">
+             <i class="fa-solid fa-shirt"></i>  Thời trang Quần
+             </div>
+             </div>
+         </div>
+
+         <div class="contenct">
+              
+             <div class="row py-3">
+          <?php
+         
+            
+      
+        $sql = "SELECT * FROM products WHERE nganhhang='Thời trang quần'";
+        $qr = mysqli_query($conn,$sql);
+                
+        while($rows = mysqli_fetch_assoc($qr)){
+          
+                
+                 
+      ?>  
+                 
+             <div class="col-md-3">
+                 <div class="row">
+                        <input type="hidden" name="id" value="<?php echo $id;?>" id="">   
+                     <div class="col-12">
+                 <img src="<?php echo $rows['img']; ?>"class="img-fluid">
+                         </div>
+                 </div>
+                 <div class="row">
+                 <div class="col-12">
+                 <?php echo $rows['name']; ?>   <br>
+                     <strong><?php echo $rows['price']; ?>đ</strong>
+                     </div>
+                 </div>
+                
+                                       <div class="col-12" align="right">
+                     <h6 align="right" ><input class="update" type="submit" name="them" id="them" value="Mua Ngay"></h6><br>
+                                           <a href="chitietsanpham.php?id=<?php echo $rows["id"];?>">xem chi tiet </a>
+                     </div>
+                 </div>
+              <?php } ?>
+         </div>
+               <div class="contenheard">
+         <div class="row">
+             <div class="col-12">
+             <i class="fa-solid fa-shirt"></i>  Thời trang áo
+             </div>
+             </div>
+         </div>
+         
+         
+         <div class="contenct">
+                <div class="row py-3">
+          <?php
+         
+            
+      
+        $sql = "SELECT * FROM products WHERE nganhhang='Thời trang áo'";
+        $qr = mysqli_query($conn,$sql);
+                
+        while($rows = mysqli_fetch_assoc($qr)){
+          
+                
+                 
+      ?>  
+                 
+             <div class="col-md-3">
+                 <div class="row">
+                        <input type="hidden" name="id" value="<?php echo $id;?>" id="">   
+                     <div class="col-12">
+                 <img src="<?php echo $rows['img']; ?>"class="img-fluid">
+                         </div>
+                 </div>
+                 <div class="row">
+                 <div class="col-12">
+                 <?php echo $rows['name']; ?>   <br>
+                     <strong><?php echo $rows['price']; ?>đ</strong>
+                     </div>
+                 </div>
+                
+                                       <div class="col-12" align="right">
+                     <h6 align="right" ><input class="update" type="submit" name="them" id="them" value="Mua Ngay"></h6><br>
+                                           <a href="chitietsanpham.php?id=<?php echo $rows["id"];?>">xem chi tiet </a>
+                     </div>
+                 </div>
+              <?php } ?>
+         </div>
+         </div>
+         
+          <div class="contenheard">
+         <div class="row">
+             <div class="col-12">
+            <i class="fa-solid fa-droplet"></i>Nước xả vải
+             </div>
+             </div>
+         </div>
+         <div class="contenct">
+             <div class="row py-3">
+          <?php
+         
+            
+      
+        $sql = "SELECT * FROM products WHERE nganhhang='Nước xả vải'";
+        $qr = mysqli_query($conn,$sql);
+                
+        while($rows = mysqli_fetch_assoc($qr)){
+          
+                
+                 
+      ?>  
+                 
+             <div class="col-md-3">
+                 <div class="row">
+                        <input type="hidden" name="id" value="<?php echo $id;?>" id="">   
+                     <div class="col-12">
+                 <img src="<?php echo $rows['img']; ?>"class="img-fluid">
+                         </div>
+                 </div>
+                 <div class="row">
+                 <div class="col-12">
+                 <?php echo $rows['name']; ?>   <br>
+                     <strong><?php echo $rows['price']; ?>đ</strong>
+                     </div>
+                 </div>
+                
+                                       <div class="col-12" align="right">
+                     <h6 align="right" ><input class="update" type="submit" name="them" id="them" value="Mua Ngay"></h6><br>
+                                           <a href="chitietsanpham.php?id=<?php echo $rows["id"];?>">xem chi tiet </a>
+                     </div>
+                 </div>
+              <?php } ?>
+         </div>
+         </div>
+        <!--------------------------------footerconten--------------------->
+          <div class="footterconten">
+      <nav aria-label="Page navigation example">
+<ul class="pagination">
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Previous">
+  <span aria-hidden="true">&laquo;</span>
+</a>
+</li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item"><a class="page-link" href="#">4</a></li>
+<li class="page-item"><a class="page-link" href="#">5</a></li>
+<li class="page-item"><a class="page-link" href="#">6</a></li>
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Next">
+  <span aria-hidden="true">&raquo;</span>
+</a>
+</li>
+</ul>
+</nav>  
+        </div>
+  </div>
+  
+  
+  
+  
+  
+      <!--------------------------------------------myfooter---------------------------------->
+  
+  
+  
+</section>
+<section class="myfooter bg-secondary text-white py-4">
+<div class="container">
+    <div class="row">
+    <div class="col-md-3">
+        <h5>Về chúng tôi</h5><br>
+        <a><font face="Bradley Hand ITC">Don’t bother me i'm in AOD SHOP<br>
+© Bản quyền thuộc về AOD</font></a>
+       
+        </div>
+    <div class="col-md-3">
+        <h5>Liên hệ</h5>
+        <div class="row">
+        <div class="col-12">
+                Điện thoại<br>
+        <strong>0823458246</strong>
+            </div></div>
+        <br>
+        <div class="row">
+        <div class="col-12">
+                Email CSKH<br>
+        <strong>Buihuy111004@gmail.com</strong>
+            </div></div>
+        <br>
+        <div class="row">
+        <div class="col-12">
+                Email liên hệ công việc<br>
+        <strong>aodshop204@yahoo.com</strong>
+            </div></div>
+        <br>
+         <div class="row">
+            <div class="col-12">
+                Thứ hai - Chủ Nhật<br>
+        <strong>9h20-22h00</strong>
+            </div>
+        
+        </div>
+        </div>
+    <div class="col-md-3">
+        <h5>Hỗ trợ</h5>
+        <div class="row">
+        <div class="col-12">Tài khoản</div>
+        </div><br>
+         <div class="row"><div class="col-12">Chính sách đối trả</div></div><br>
+         <div class="row"><div class="col-12">Chính sách bảo mật</div></div><br>
+         <div class="row"><div class="col-12">Hướng dẫn quay video đóng/mở gói hàng</div></div><br>
+         <div class="row"><div class="col-12">Tích lũy điểm thưởng tại AOD thế nào ?</div></div><br>
+        
+        </div>
+    <div class="col-md-3">
+        <h5>Hệ thống cửa hàng</h5>
+        <div class="row">
+        <div class="col-12">
+           <font> Hiện tại AOD® chỉ hoạt động kinh doanh qua các kênh trực tuyến: Website, Facebook, Instagram, Shopee, Lazada & Tiktok shop</font>
+            </div>
+        </div><br>
+        <div class="row"></div>
+        <h4>Mở rộng</h4><br>
+        <div class="row">
+        <div class="col-12">
+            <font>Bài viết</font><br>
+            <br>
+            <font>Tuyển dụng</font>
+            </div>
+        </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+        <h4>Đăng kí nhận tin</h4>
+        <div class="row">
+            <div class="col-md-10">
+             <div class="input-group mb-1">
+<input type="text" class="form-control" placeholder="Nhập email" aria-label="Nhap san pham can tim" aria-describedby="basic-addon2">
+<span class="input-group-text bg-danger text-white" id="basic-addon">Đăng kí
+</span>
+</div>
+            </div>
+            <div class="col-md-2">
+            <div class="row">
+                <div class="col-4"><i class="fa-brands fa-facebook-f"></i></div>
+                 <div class="col-4"><i class="fa-brands fa-tiktok"></i></div>
+                 <div class="col-4"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!--------------------------------------------myfooter---------------------------------->
+<script src="js/bootstrap.bundle.min.js"></script>
+ 
+   <script>
+        $(document).ready(function() {
+          $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+              dots:false,
+            responsiveClass: true,
+            responsive: {
+              0: {
+                items: 1,
+             
+              },
+              600: {
+                items: 3,
+             
+              },
+              1000: {
+                items: 5,
+               
+                loop: false,
+                margin: 20
+              }
+            }
+          })
+        })
+      </script>
+</body>
+</html>
